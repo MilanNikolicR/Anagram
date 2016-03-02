@@ -1,7 +1,6 @@
 require 'open-uri'
  
-anagram = Hash.new {|hash, key| hash[key] = []} 
-def anagram_groups(anagram)
+  anagram = Hash.new {|hash, key| hash[key] = []} 
   open('anagrams-wordlist.txt', 'r:iso-8859-1:utf-8') do |f|
   words = f.read.split
     for word in words
@@ -13,5 +12,3 @@ def anagram_groups(anagram)
       p ana
     end
   end
-end
-anagram_groups(anagram)
