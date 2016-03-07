@@ -10,8 +10,7 @@ class AnagramSolver
     anagram_groups = Hash.new {|hash, key| hash[key] = []} 
 
     for word in dictionary
-      word=word.downcase.gsub(/\W/, '')
-      anagram_groups[word.downcase.split('').sort] << word.downcase
+      anagram_groups[word.gsub(/\W/, '').downcase.split('').sort] << word.downcase
     end
     
     result = []

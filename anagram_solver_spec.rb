@@ -34,7 +34,7 @@ describe AnagramSolver do
 
     it "ignores everything except letters" do
       dictionary = ["1", "abba", "bbaa", "man's" ,"sman"]
-      expected_anagrams=[["abba","bbaa"],["mans","sman"]]
+      expected_anagrams=[["abba","bbaa"],["man's","sman"]]
       anagram_solver = AnagramSolver.new(dictionary)
 
       expect(anagram_solver.anagrams).to eq(expected_anagrams)
@@ -42,7 +42,7 @@ describe AnagramSolver do
 
     it "ignores lettercase" do
       dictionary = ["abc", "aBbA", "BbAa", "ma'N" ,"Nam"]
-      expected_anagrams=[["abba","bbaa"],["man","nam"]]
+      expected_anagrams=[["abba","bbaa"],["ma'n","nam"]]
       anagram_solver = AnagramSolver.new(dictionary)
 
       expect(anagram_solver.anagrams).to eq(expected_anagrams)
