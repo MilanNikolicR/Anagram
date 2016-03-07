@@ -34,30 +34,30 @@ describe AnagramSolver do
 
     it "ignores everything except letters" do
       dictionary = ["1", "abba", "bbaa", "man's" ,"sman"]
-      expected_anagrams=[["abba","bbaa"],["man's","sman"]]
+      expected_anagrams=[["abba","bbaa"],["mans","sman"]]
       anagram_solver = AnagramSolver.new(dictionary)
 
       expect(anagram_solver.anagrams).to eq(expected_anagrams)
     end  
 
     it "ignores lettercase" do
-      dictionary = ["abc", "aBbA", "BbAa", "maN's" ,"sman"]
-      expected_anagrams=[["aBbA","BbAa"],["maN's","sman"]]
+      dictionary = ["abc", "aBbA", "BbAa", "ma'N" ,"Nam"]
+      expected_anagrams=[["abba","bbaa"],["man","nam"]]
       anagram_solver = AnagramSolver.new(dictionary)
 
       expect(anagram_solver.anagrams).to eq(expected_anagrams)
     end
 
     it "ignores words with one character" do
-      dictionary = ["abba", "bbaa", "man's" ,"sman", "blac", "b", "a"]
-      expected_anagrams=[["abba","bbaa"],["man's","sman"]]
+      dictionary = ["abba", "bbaa", "acb" ,"abc", "b", "a"]
+      expected_anagrams=[["abba","bbaa"],["acb","abc"]]
       anagram_solver = AnagramSolver.new(dictionary)
 
       expect(anagram_solver.anagrams).to eq(expected_anagrams)
     end
     it "ignores words without anagrams" do
-      dictionary = ["abba", "bbaa", "man's" ,"sman", "blac"]
-      expected_anagrams=[["abba","bbaa"],["man's","sman"]]
+      dictionary = ["abba", "bbaa", "abc" ,"ab", "efg", "ba"]
+      expected_anagrams=[["abba","bbaa"],["ab","ba"]]
       anagram_solver = AnagramSolver.new(dictionary)
 
       expect(anagram_solver.anagrams).to eq(expected_anagrams)
